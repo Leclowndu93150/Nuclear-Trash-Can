@@ -15,7 +15,7 @@ public class TrashCansConfig {
     static{
         IConfigBuilder builder = ConfigBuilders.newTomlConfig("trashcans", null, false);
 
-        allowVoidingNuclearWaste = builder.define("allowVoidingNuclearWaste", false);
+        allowVoidingNuclearWaste = builder.define("allowVoidingNuclearWaste", true);
 
         builder.build();
     }

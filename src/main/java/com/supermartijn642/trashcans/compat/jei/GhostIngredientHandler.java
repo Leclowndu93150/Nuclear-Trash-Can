@@ -30,16 +30,8 @@ public class GhostIngredientHandler implements IGhostIngredientHandler<TrashCanW
 
         // Get the slots for the item and fluid filters
         List<Slot> itemFilterSlots = new ArrayList<>(), fluidFilterSlots = new ArrayList<>();
-        if(widget instanceof ItemTrashCanScreen){
+        if(widget instanceof LiquidTrashCanScreen){
             for(int slot = 1; slot <= 9; slot++)
-                itemFilterSlots.add(container.getSlot(slot));
-        }else if(widget instanceof LiquidTrashCanScreen){
-            for(int slot = 1; slot <= 9; slot++)
-                fluidFilterSlots.add(container.getSlot(slot));
-        }else if(widget instanceof UltimateTrashCanScreen){
-            for(int slot = 3; slot <= 11; slot++)
-                itemFilterSlots.add(container.getSlot(slot));
-            for(int slot = 12; slot <= 20; slot++)
                 fluidFilterSlots.add(container.getSlot(slot));
         }
 
@@ -74,7 +66,6 @@ public class GhostIngredientHandler implements IGhostIngredientHandler<TrashCanW
         else if(Compatibility.MEKANISM.isGasStack(ingredient.getIngredient()))
             ingredientStack = Compatibility.MEKANISM.getChemicalTankForGasStack(ingredient.getIngredient());
 
-        // Check whether the ingredient is applicable to a fluid filter
         ItemFilter filter = LiquidTrashCanFilters.createFilter(ingredientStack);
         if(filter != null){
             // Add a target for each fluid filter slot

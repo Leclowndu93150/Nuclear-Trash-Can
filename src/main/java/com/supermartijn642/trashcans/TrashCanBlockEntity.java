@@ -329,19 +329,11 @@ public class TrashCanBlockEntity extends BaseBlockEntity implements TickableBloc
             if(Compatibility.MEKANISM.drainGasFromItem(this.liquidItem))
                 this.dataChanged();
         }
-        if(this.energy && !this.energyItem.isEmpty()){
-            TrashCanBlockEntity.this.energyItem.getCapability(ForgeCapabilities.ENERGY).ifPresent(energyStorage -> {
-                energyStorage.extractEnergy(energyStorage.getEnergyStored(), false);
-                TrashCanBlockEntity.this.dataChanged();
-            });
-        }
     }
 
     @Nonnull
     @Override
     public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side){
-        if(this.items && cap == ForgeCapabilities.ITEM_HANDLER)
-            return LazyOptional.of(() -> this.ITEM_HANDLER).cast();
         if(this.liquids){
             if(cap == ForgeCapabilities.FLUID_HANDLER)
                 return LazyOptional.of(() -> this.FLUID_HANDLER).cast();
@@ -350,19 +342,12 @@ public class TrashCanBlockEntity extends BaseBlockEntity implements TickableBloc
                 return handler == null ? LazyOptional.empty() : LazyOptional.of(() -> handler).cast();
             }
         }
-        if(this.energy && cap == ForgeCapabilities.ENERGY)
-            return LazyOptional.of(() -> this.ENERGY_STORAGE).cast();
         return LazyOptional.empty();
     }
 
     @Override
     protected CompoundTag writeData(){
         CompoundTag tag = new CompoundTag();
-        if(this.items){
-            for(int i = 0; i < this.itemFilter.size(); i++)
-                tag.put("itemFilter" + i, this.itemFilter.get(i).save(new CompoundTag()));
-            tag.putBoolean("itemFilterWhitelist", this.itemFilterWhitelist);
-        }
         if(this.liquids){
             for(int i = 0; i < this.liquidFilter.size(); i++)
                 if(this.liquidFilter.get(i) != null)
@@ -371,32 +356,16 @@ public class TrashCanBlockEntity extends BaseBlockEntity implements TickableBloc
             if(!this.liquidItem.isEmpty())
                 tag.put("liquidItem", this.liquidItem.save(new CompoundTag()));
         }
-        if(this.energy){
-            tag.putBoolean("useEnergyLimit", this.useEnergyLimit);
-            tag.putInt("energyLimit", this.energyLimit);
-            if(!this.energyItem.isEmpty())
-                tag.put("energyItem", this.energyItem.save(new CompoundTag()));
-        }
         return tag;
     }
 
     @Override
     protected void readData(CompoundTag tag){
-        if(this.items){
-            for(int i = 0; i < this.itemFilter.size(); i++)
-                this.itemFilter.set(i, tag.contains("itemFilter" + i) ? ItemStack.of(tag.getCompound("itemFilter" + i)) : ItemStack.EMPTY);
-            this.itemFilterWhitelist = tag.contains("itemFilterWhitelist") && tag.getBoolean("itemFilterWhitelist");
-        }
         if(this.liquids){
             for(int i = 0; i < this.liquidFilter.size(); i++)
                 this.liquidFilter.set(i, tag.contains("liquidFilter" + i) ? LiquidTrashCanFilters.read(tag.getCompound("liquidFilter" + i)) : null);
             this.liquidFilterWhitelist = tag.contains("liquidFilterWhitelist") && tag.getBoolean("liquidFilterWhitelist");
             this.liquidItem = tag.contains("liquidItem") ? ItemStack.of(tag.getCompound("liquidItem")) : ItemStack.EMPTY;
-        }
-        if(this.energy){
-            this.useEnergyLimit = tag.contains("useEnergyLimit") && tag.getBoolean("useEnergyLimit");
-            this.energyLimit = tag.contains("energyLimit") ? tag.getInt("energyLimit") : DEFAULT_ENERGY_LIMIT;
-            this.energyItem = tag.contains("energyItem") ? ItemStack.of(tag.getCompound("energyItem")) : ItemStack.EMPTY;
         }
     }
 }

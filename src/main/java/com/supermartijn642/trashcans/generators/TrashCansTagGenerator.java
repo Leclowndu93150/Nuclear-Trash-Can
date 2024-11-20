@@ -16,9 +16,6 @@ public class TrashCansTagGenerator extends TagGenerator {
     @Override
     public void generate(){
         this.blockMineableWithPickaxe()
-            .add(TrashCans.item_trash_can)
-            .add(TrashCans.liquid_trash_can)
-            .add(TrashCans.energy_trash_can)
-            .add(TrashCans.ultimate_trash_can);
+                .add(TrashCans.liquid_trash_can);
     }
 }

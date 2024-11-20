@@ -15,9 +15,6 @@ public class TrashCansLootTableGenerator extends LootTableGenerator {
 
     @Override
     public void generate(){
-        this.dropSelf(TrashCans.item_trash_can);
         this.dropSelf(TrashCans.liquid_trash_can);
-        this.dropSelf(TrashCans.energy_trash_can);
-        this.dropSelf(TrashCans.ultimate_trash_can);
     }
 }
