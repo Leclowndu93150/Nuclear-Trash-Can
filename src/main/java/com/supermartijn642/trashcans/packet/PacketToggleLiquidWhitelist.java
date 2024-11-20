@@ -19,8 +19,8 @@ public class PacketToggleLiquidWhitelist extends BlockEntityBasePacket<TrashCanB
 
     @Override
     protected void handle(TrashCanBlockEntity entity, PacketContext context){
-        if(entity.liquids){
-            entity.liquidFilterWhitelist = !entity.liquidFilterWhitelist;
+        if(entity.nuclears){
+            entity.nuclearFilterWhitelist = !entity.nuclearFilterWhitelist;
             entity.dataChanged();
         }
     }

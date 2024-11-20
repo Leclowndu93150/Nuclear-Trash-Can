@@ -10,6 +10,6 @@ public class TrashCansClient {
 
     public static void registerScreens(){
         ClientRegistrationHandler handler = ClientRegistrationHandler.get("trashcans");
-        handler.registerContainerScreen(() -> TrashCans.liquid_trash_can_container, container -> new TrashCanWidgetContainerScreen(new LiquidTrashCanScreen(), container, false));
+        handler.registerContainerScreen(() -> TrashCans.nuclear_trash_can_container, container -> new TrashCanWidgetContainerScreen(new LiquidTrashCanScreen(), container, false));
     }
 }

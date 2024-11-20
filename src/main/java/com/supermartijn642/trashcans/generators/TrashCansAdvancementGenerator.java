@@ -16,9 +16,9 @@ public class TrashCansAdvancementGenerator extends AdvancementGenerator {
     @Override
     public void generate(){
         this.advancement("trash_can")
-            .icon(TrashCans.liquid_trash_can)
+            .icon(TrashCans.nuclear_trash_can)
             .background("minecraft", "block/cobblestone")
-            .hasItemsCriterion("has_liquid_trash_can", TrashCans.liquid_trash_can)
-            .requirementGroup("has_liquid_trash_can");
+            .hasItemsCriterion("has_nuclear_trash_can", TrashCans.nuclear_trash_can)
+            .requirementGroup("has_nuclear_trash_can");
     }
 }

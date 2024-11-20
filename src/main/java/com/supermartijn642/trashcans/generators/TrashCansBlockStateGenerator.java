@@ -15,6 +15,6 @@ public class TrashCansBlockStateGenerator extends BlockStateGenerator {
 
     @Override
     public void generate(){
-        this.blockState(TrashCans.liquid_trash_can).emptyVariant(builder -> builder.model("liquid_trash_can"));
+        this.blockState(TrashCans.nuclear_trash_can).emptyVariant(builder -> builder.model("nuclear_trash_can"));
     }
 }

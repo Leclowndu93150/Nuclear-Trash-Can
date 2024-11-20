@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "trashcans:liquid_trash_can"
+      "model": "trashcans:nuclear_trash_can"
     }
   }
 }

@@ -30,13 +30,13 @@ public class TrashCans {
 
     public static final PacketChannel CHANNEL = PacketChannel.create("trashcans");
 
-    @RegistryEntryAcceptor(namespace = "trashcans", identifier = "liquid_trash_can", registry = RegistryEntryAcceptor.Registry.BLOCKS)
-    public static BaseBlock liquid_trash_can;
-    @RegistryEntryAcceptor(namespace = "trashcans", identifier = "liquid_trash_can_tile", registry = RegistryEntryAcceptor.Registry.BLOCK_ENTITY_TYPES)
-    public static BaseBlockEntityType<TrashCanBlockEntity> liquid_trash_can_tile;
+    @RegistryEntryAcceptor(namespace = "trashcans", identifier = "nuclear_trash_can", registry = RegistryEntryAcceptor.Registry.BLOCKS)
+    public static BaseBlock nuclear_trash_can;
+    @RegistryEntryAcceptor(namespace = "trashcans", identifier = "nuclear_trash_can_tile", registry = RegistryEntryAcceptor.Registry.BLOCK_ENTITY_TYPES)
+    public static BaseBlockEntityType<TrashCanBlockEntity> nuclear_trash_can_tile;
 
-    @RegistryEntryAcceptor(namespace = "trashcans", identifier = "liquid_trash_can_container", registry = RegistryEntryAcceptor.Registry.MENU_TYPES)
-    public static BaseContainerType<TrashCanContainer> liquid_trash_can_container;
+    @RegistryEntryAcceptor(namespace = "trashcans", identifier = "nuclear_trash_can_container", registry = RegistryEntryAcceptor.Registry.MENU_TYPES)
+    public static BaseContainerType<TrashCanContainer> nuclear_trash_can_container;
 
     public TrashCans(){
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::init);
@@ -59,10 +59,10 @@ public class TrashCans {
     private static void register(){
         RegistrationHandler handler = RegistrationHandler.get("trashcans");
 
-        handler.registerBlock("liquid_trash_can", () -> new TrashCanBlock(() -> liquid_trash_can_tile, LiquidTrashCanContainer::new));
-        handler.registerBlockEntityType("liquid_trash_can_tile", () -> BaseBlockEntityType.create((pos, state) -> new TrashCanBlockEntity(liquid_trash_can_tile, pos, state, false, true, false), liquid_trash_can));
-        handler.registerItem("liquid_trash_can", () -> new BaseBlockItem(liquid_trash_can, ItemProperties.create().group(CreativeItemGroup.getFunctionalBlocks())));
-        handler.registerMenuType("liquid_trash_can_container", BaseContainerType.create((container, buffer) -> buffer.writeBlockPos(container.getBlockEntityPos()), (player, buffer) -> new LiquidTrashCanContainer(player, buffer.readBlockPos())));
+        handler.registerBlock("nuclear_trash_can", () -> new TrashCanBlock(() -> nuclear_trash_can_tile, LiquidTrashCanContainer::new));
+        handler.registerBlockEntityType("nuclear_trash_can_tile", () -> BaseBlockEntityType.create((pos, state) -> new TrashCanBlockEntity(nuclear_trash_can_tile, pos, state, false, true, false), nuclear_trash_can));
+        handler.registerItem("nuclear_trash_can", () -> new BaseBlockItem(nuclear_trash_can, ItemProperties.create().group(CreativeItemGroup.getFunctionalBlocks())));
+        handler.registerMenuType("nuclear_trash_can_container", BaseContainerType.create((container, buffer) -> buffer.writeBlockPos(container.getBlockEntityPos()), (player, buffer) -> new LiquidTrashCanContainer(player, buffer.readBlockPos())));
 
     }
 

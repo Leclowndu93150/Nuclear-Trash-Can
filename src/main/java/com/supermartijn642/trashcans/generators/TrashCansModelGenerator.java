@@ -14,7 +14,7 @@ public class TrashCansModelGenerator extends ModelGenerator {
 
     @Override
     public void generate(){
-        this.model("liquid_trash_can").parent("trash_can").texture("all", "trash_can_liquids");
-        this.model("item/liquid_trash_can").parent("liquid_trash_can");
+        this.model("nuclear_trash_can").parent("trash_can").texture("all", "trash_can_nuclears");
+        this.model("item/nuclear_trash_can").parent("nuclear_trash_can");
     }
 }

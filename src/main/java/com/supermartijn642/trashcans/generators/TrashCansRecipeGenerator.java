@@ -17,7 +17,7 @@ public class TrashCansRecipeGenerator extends RecipeGenerator {
 
     @Override
     public void generate(){
-        this.shaped(TrashCans.liquid_trash_can)
+        this.shaped(TrashCans.nuclear_trash_can)
             .pattern("AAA")
             .pattern("BCB")
             .pattern("BBB")

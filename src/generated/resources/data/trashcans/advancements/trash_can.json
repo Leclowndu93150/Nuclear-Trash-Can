@@ -28,13 +28,13 @@
         ]
       }
     },
-    "has_liquid_trash_can": {
+    "has_nuclear_trash_can": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "trashcans:liquid_trash_can"
+              "trashcans:nuclear_trash_can"
             ]
           }
         ]
@@ -56,7 +56,7 @@
   "requirements": [
     [
       "has_item_trash_can",
-      "has_liquid_trash_can",
+      "has_nuclear_trash_can",
       "has_energy_trash_can"
     ]
   ]

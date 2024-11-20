@@ -14,7 +14,7 @@
     },
     {
       "type": "minecraft:single",
-      "resource": "trashcans:trash_can_liquids"
+      "resource": "trashcans:trash_can_nuclears"
     }
   ]
 }

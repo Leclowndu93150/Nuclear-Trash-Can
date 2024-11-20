@@ -16,15 +16,15 @@ public class TrashCansLanguageGenerator extends LanguageGenerator {
     @Override
     public void generate(){
         // Blocks
-        this.block(TrashCans.liquid_trash_can, "Fluid Trash Can");
+        this.block(TrashCans.nuclear_trash_can, "Fluid Trash Can");
 
-        this.translation("trashcans.liquid_trash_can.info", "Can void liquids and gasses, also contains a filter for up to 9 fluids");
+        this.translation("trashcans.nuclear_trash_can.info", "Can void nuclears and gasses, also contains a filter for up to 9 fluids");
 
         this.translation("trashcans.advancement.trash_can.title", "Don't forget to recycle");
         this.translation("trashcans.advancement.trash_can.description", "Craft a trash can");
 
-        this.translation("trashcans.gui.liquid_trash_can.title", "Liquid Trash Can");
-        this.translation("trashcans.gui.liquid_trash_can.filter", "Filter");
+        this.translation("trashcans.gui.nuclear_trash_can.title", "Liquid Trash Can");
+        this.translation("trashcans.gui.nuclear_trash_can.filter", "Filter");
         this.translation("trashcans.gui.whitelist.on", "Whitelist");
         this.translation("trashcans.gui.whitelist.off", "Blacklist");
         this.translation("trashcans.gui.arrow.left", "Decrease energy limit");

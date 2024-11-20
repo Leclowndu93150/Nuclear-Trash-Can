@@ -78,7 +78,7 @@ public class GhostIngredientHandler implements IGhostIngredientHandler<TrashCanW
                 Target<I> target = createTarget(bounds, input -> {
                     TrashCanBlockEntity entity = container.getBlockEntity();
                     if(entity != null){
-                        entity.liquidFilter.set(index, filter);
+                        entity.nuclearFilter.set(index, filter);
                         TrashCans.CHANNEL.sendToServer(new PacketChangeLiquidFilter(container.getBlockEntityPos(), index, filter));
                     }
                 });
