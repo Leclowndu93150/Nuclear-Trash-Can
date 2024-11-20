@@ -290,7 +290,7 @@ public class TrashCanBlockEntity extends BaseBlockEntity implements TickableBloc
     public final boolean items;
     public final ArrayList<ItemStack> itemFilter = new ArrayList<>();
     public boolean itemFilterWhitelist = false;
-    public final boolean nuclears;
+    public final boolean nuclear;
     public final ArrayList<ItemFilter> nuclearFilter = new ArrayList<>();
     public boolean nuclearFilterWhitelist = false;
     public ItemStack nuclearItem = ItemStack.EMPTY;
@@ -299,10 +299,10 @@ public class TrashCanBlockEntity extends BaseBlockEntity implements TickableBloc
     public boolean useEnergyLimit = false;
     public ItemStack energyItem = ItemStack.EMPTY;
 
-    public TrashCanBlockEntity(BlockEntityType<?> blockEntityType, BlockPos pos, BlockState state, boolean items, boolean nuclears, boolean energy){
+    public TrashCanBlockEntity(BlockEntityType<?> blockEntityType, BlockPos pos, BlockState state, boolean items, boolean nuclear, boolean energy){
         super(blockEntityType, pos, state);
         this.items = items;
-        this.nuclears = nuclears;
+        this.nuclear = nuclear;
         this.energy = energy;
 
         for(int i = 0; i < 9; i++){
@@ -313,7 +313,7 @@ public class TrashCanBlockEntity extends BaseBlockEntity implements TickableBloc
 
     @Override
     public void update(){
-        if(this.nuclears && !this.nuclearItem.isEmpty() && this.nuclearItem.getItem() != Items.BUCKET){
+        if(this.nuclear && !this.nuclearItem.isEmpty() && this.nuclearItem.getItem() != Items.BUCKET){
             this.nuclearItem.getCapability(ForgeCapabilities.FLUID_HANDLER_ITEM).ifPresent(fluidHandler -> {
                 boolean changed = false;
                 for(int tank = 0; tank < fluidHandler.getTanks(); tank++)
@@ -334,7 +334,7 @@ public class TrashCanBlockEntity extends BaseBlockEntity implements TickableBloc
     @Nonnull
     @Override
     public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side){
-        if(this.nuclears){
+        if(this.nuclear){
             if(cap == ForgeCapabilities.FLUID_HANDLER)
                 return LazyOptional.of(() -> this.FLUID_HANDLER).cast();
             else if(Compatibility.MEKANISM.isInstalled() && cap == Compatibility.MEKANISM.getGasHandlerCapability()){
@@ -348,7 +348,7 @@ public class TrashCanBlockEntity extends BaseBlockEntity implements TickableBloc
     @Override
     protected CompoundTag writeData(){
         CompoundTag tag = new CompoundTag();
-        if(this.nuclears){
+        if(this.nuclear){
             for(int i = 0; i < this.nuclearFilter.size(); i++)
                 if(this.nuclearFilter.get(i) != null)
                     tag.put("nuclearFilter" + i, NuclearTrashCanFilters.write(this.nuclearFilter.get(i)));
@@ -361,7 +361,7 @@ public class TrashCanBlockEntity extends BaseBlockEntity implements TickableBloc
 
     @Override
     protected void readData(CompoundTag tag){
-        if(this.nuclears){
+        if(this.nuclear){
             for(int i = 0; i < this.nuclearFilter.size(); i++)
                 this.nuclearFilter.set(i, tag.contains("nuclearFilter" + i) ? NuclearTrashCanFilters.read(tag.getCompound("nuclearFilter" + i)) : null);
             this.nuclearFilterWhitelist = tag.contains("nuclearFilterWhitelist") && tag.getBoolean("nuclearFilterWhitelist");

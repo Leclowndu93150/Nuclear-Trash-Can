@@ -104,6 +104,6 @@ public class TrashCanBlock extends BaseBlock implements EntityHoldingBlock, Simp
 
     @Override
     protected void appendItemInformation(ItemStack stack, BlockGetter level, Consumer<Component> info, boolean advanced){
-        info.accept(TextComponents.translation("trashcans." + Registries.BLOCKS.getIdentifier(this).getPath() + ".info").color(ChatFormatting.GRAY).get());
+        info.accept(TextComponents.translation("nucleartrashcan." + Registries.BLOCKS.getIdentifier(this).getPath() + ".info").color(ChatFormatting.GRAY).get());
     }
 }

@@ -16,7 +16,7 @@ import java.util.function.Consumer;
  */
 public class WhitelistButton extends AbstractButtonWidget {
 
-    private static final ResourceLocation BUTTONS = new ResourceLocation("trashcans", "textures/blacklist_button.png");
+    private static final ResourceLocation BUTTONS = new ResourceLocation("nucleartrashcan", "textures/blacklist_button.png");
 
     public boolean white = true;
     private boolean active = true;
@@ -53,6 +53,6 @@ public class WhitelistButton extends AbstractButtonWidget {
 
     @Override
     protected void getTooltips(Consumer<Component> tooltips){
-        tooltips.accept(TextComponents.translation("trashcans.gui.whitelist." + (this.white ? "on" : "off")).get());
+        tooltips.accept(TextComponents.translation("nucleartrashcan.gui.whitelist." + (this.white ? "on" : "off")).get());
     }
 }

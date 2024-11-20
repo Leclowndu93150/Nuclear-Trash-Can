@@ -42,7 +42,7 @@ public class PacketChangeNuclearFilter extends BlockEntityBasePacket<TrashCanBlo
 
     @Override
     protected void handle(TrashCanBlockEntity entity, PacketContext context){
-        if(entity.nuclears){
+        if(entity.nuclear){
             entity.nuclearFilter.set(this.filterSlot, this.filter);
             entity.dataChanged();
         }

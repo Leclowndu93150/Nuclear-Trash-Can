@@ -16,7 +16,7 @@ import java.util.function.Consumer;
  */
 public class CheckBox extends AbstractButtonWidget {
 
-    private static final ResourceLocation BUTTONS = new ResourceLocation("trashcans", "textures/checkmarkbox.png");
+    private static final ResourceLocation BUTTONS = new ResourceLocation("nucleartrashcan", "textures/checkmarkbox.png");
 
     public boolean checked;
     private boolean active = true;
@@ -53,6 +53,6 @@ public class CheckBox extends AbstractButtonWidget {
 
     @Override
     protected void getTooltips(Consumer<Component> tooltips){
-        tooltips.accept(TextComponents.translation("trashcans.gui.energy_trash_can.check." + (this.checked ? "on" : "off")).get());
+        tooltips.accept(TextComponents.translation("nucleartrashcan.gui.energy_trash_can.check." + (this.checked ? "on" : "off")).get());
     }
 }

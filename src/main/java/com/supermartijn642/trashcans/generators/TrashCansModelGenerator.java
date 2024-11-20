@@ -9,12 +9,12 @@ import com.supermartijn642.core.generator.ResourceCache;
 public class TrashCansModelGenerator extends ModelGenerator {
 
     public TrashCansModelGenerator(ResourceCache cache){
-        super("trashcans", cache);
+        super("nucleartrashcan", cache);
     }
 
     @Override
     public void generate(){
-        this.model("nuclear_trash_can").parent("trash_can").texture("all", "trash_can_nuclears");
+        this.model("nuclear_trash_can").parent("trash_can").texture("all", "trash_can_nuclear");
         this.model("item/nuclear_trash_can").parent("nuclear_trash_can");
     }
 }

@@ -13,7 +13,7 @@ import net.minecraft.resources.ResourceLocation;
  */
 public class ArrowButton extends AbstractButtonWidget {
 
-    private static final ResourceLocation BUTTONS = new ResourceLocation("trashcans", "textures/arrow_buttons.png");
+    private static final ResourceLocation BUTTONS = new ResourceLocation("nucleartrashcan", "textures/arrow_buttons.png");
 
     private final boolean left;
     private boolean active = true;
@@ -40,6 +40,6 @@ public class ArrowButton extends AbstractButtonWidget {
 
     @Override
     public Component getNarrationMessage(){
-        return TextComponents.translation("trashcans.gui.arrow." + (this.left ? "left" : "right")).get();
+        return TextComponents.translation("nucleartrashcan.gui.arrow." + (this.left ? "left" : "right")).get();
     }
 }

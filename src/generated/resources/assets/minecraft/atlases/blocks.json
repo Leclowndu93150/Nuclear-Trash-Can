@@ -2,19 +2,7 @@
   "sources": [
     {
       "type": "minecraft:single",
-      "resource": "trashcans:trash_can_ultimate"
-    },
-    {
-      "type": "minecraft:single",
-      "resource": "trashcans:trash_can_energy"
-    },
-    {
-      "type": "minecraft:single",
-      "resource": "trashcans:trash_can_items"
-    },
-    {
-      "type": "minecraft:single",
-      "resource": "trashcans:trash_can_nuclears"
+      "resource": "nucleartrashcan:trash_can_nuclear"
     }
   ]
 }

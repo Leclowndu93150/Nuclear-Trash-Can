@@ -9,7 +9,7 @@ import com.supermartijn642.trashcans.screen.*;
 public class TrashCansClient {
 
     public static void registerScreens(){
-        ClientRegistrationHandler handler = ClientRegistrationHandler.get("trashcans");
+        ClientRegistrationHandler handler = ClientRegistrationHandler.get("nucleartrashcan");
         handler.registerContainerScreen(() -> TrashCans.nuclear_trash_can_container, container -> new TrashCanWidgetContainerScreen(new NuclearTrashCanScreen(), container, false));
     }
 }

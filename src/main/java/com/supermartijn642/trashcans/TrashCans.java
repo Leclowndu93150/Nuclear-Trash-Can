@@ -25,17 +25,17 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 /**
  * Created 7/7/2020 by SuperMartijn642
  */
-@Mod("trashcans")
+@Mod("nucleartrashcan")
 public class TrashCans {
 
-    public static final PacketChannel CHANNEL = PacketChannel.create("trashcans");
+    public static final PacketChannel CHANNEL = PacketChannel.create("nucleartrashcan");
 
-    @RegistryEntryAcceptor(namespace = "trashcans", identifier = "nuclear_trash_can", registry = RegistryEntryAcceptor.Registry.BLOCKS)
+    @RegistryEntryAcceptor(namespace = "nucleartrashcan", identifier = "nuclear_trash_can", registry = RegistryEntryAcceptor.Registry.BLOCKS)
     public static BaseBlock nuclear_trash_can;
-    @RegistryEntryAcceptor(namespace = "trashcans", identifier = "nuclear_trash_can_tile", registry = RegistryEntryAcceptor.Registry.BLOCK_ENTITY_TYPES)
+    @RegistryEntryAcceptor(namespace = "nucleartrashcan", identifier = "nuclear_trash_can_tile", registry = RegistryEntryAcceptor.Registry.BLOCK_ENTITY_TYPES)
     public static BaseBlockEntityType<TrashCanBlockEntity> nuclear_trash_can_tile;
 
-    @RegistryEntryAcceptor(namespace = "trashcans", identifier = "nuclear_trash_can_container", registry = RegistryEntryAcceptor.Registry.MENU_TYPES)
+    @RegistryEntryAcceptor(namespace = "nucleartrashcan", identifier = "nuclear_trash_can_container", registry = RegistryEntryAcceptor.Registry.MENU_TYPES)
     public static BaseContainerType<TrashCanContainer> nuclear_trash_can_container;
 
     public TrashCans(){
@@ -57,7 +57,7 @@ public class TrashCans {
     }
 
     private static void register(){
-        RegistrationHandler handler = RegistrationHandler.get("trashcans");
+        RegistrationHandler handler = RegistrationHandler.get("nucleartrashcan");
 
         handler.registerBlock("nuclear_trash_can", () -> new TrashCanBlock(() -> nuclear_trash_can_tile, NuclearTrashCanContainer::new));
         handler.registerBlockEntityType("nuclear_trash_can_tile", () -> BaseBlockEntityType.create((pos, state) -> new TrashCanBlockEntity(nuclear_trash_can_tile, pos, state, false, true, false), nuclear_trash_can));
@@ -67,7 +67,7 @@ public class TrashCans {
     }
 
     private static void registerGenerators(){
-        GeneratorRegistrationHandler handler = GeneratorRegistrationHandler.get("trashcans");
+        GeneratorRegistrationHandler handler = GeneratorRegistrationHandler.get("nucleartrashcan");
         handler.addGenerator(TrashCansAdvancementGenerator::new);
         handler.addGenerator(TrashCansModelGenerator::new);
         handler.addGenerator(TrashCansBlockStateGenerator::new);

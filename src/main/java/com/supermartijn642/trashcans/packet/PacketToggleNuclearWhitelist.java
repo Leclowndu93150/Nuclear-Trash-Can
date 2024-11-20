@@ -19,7 +19,7 @@ public class PacketToggleNuclearWhitelist extends BlockEntityBasePacket<TrashCan
 
     @Override
     protected void handle(TrashCanBlockEntity entity, PacketContext context){
-        if(entity.nuclears){
+        if(entity.nuclear){
             entity.nuclearFilterWhitelist = !entity.nuclearFilterWhitelist;
             entity.dataChanged();
         }

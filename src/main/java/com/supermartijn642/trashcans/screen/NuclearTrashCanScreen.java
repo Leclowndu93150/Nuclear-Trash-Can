@@ -15,7 +15,7 @@ public class NuclearTrashCanScreen extends TrashCanScreen<NuclearTrashCanContain
     private WhitelistButton whitelistButton;
 
     public NuclearTrashCanScreen(){
-        super("trashcans.gui.nuclear_trash_can.title");
+        super("nucleartrashcan.gui.nuclear_trash_can.title");
     }
 
     @Override
@@ -37,6 +37,6 @@ public class NuclearTrashCanScreen extends TrashCanScreen<NuclearTrashCanContain
 
     @Override
     protected void drawText(PoseStack poseStack, TrashCanBlockEntity entity){
-        ScreenUtils.drawString(poseStack, TextComponents.translation("trashcans.gui.nuclear_trash_can.filter").get(), 8, 52);
+        ScreenUtils.drawString(poseStack, TextComponents.translation("nucleartrashcan.gui.nuclear_trash_can.filter").get(), 8, 52);
     }
 }
