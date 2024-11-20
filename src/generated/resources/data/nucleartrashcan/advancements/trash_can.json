@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "item": "nucleartrashcan:nuclear_trash_can"
+    },
+    "title": {
+      "translate": "nucleartrashcan.advancement.trash_can.title"
+    },
+    "description": {
+      "translate": "nucleartrashcan.advancement.trash_can.description"
+    },
+    "frame": "task",
+    "background": "minecraft:textures/block/cobblestone.png",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_nuclear_trash_can": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "nucleartrashcan:nuclear_trash_can"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_nuclear_trash_can"
+    ]
+  ]
+}

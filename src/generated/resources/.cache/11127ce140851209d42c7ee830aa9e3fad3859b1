@@ -1,7 +1,7 @@
-// 1.20.1	2024-11-21T00:07:34.4168484	Core Lib Generators
+// 1.20.1	2024-11-21T00:09:31.7198611	Core Lib Generators
 b2febda997e32a4294a4146e775e4a60ddebf1af assets/minecraft/atlases/blocks.json
 713777ce2721ce5447483c036ecc254b2bf55a07 assets/nucleartrashcan/blockstates/nuclear_trash_can.json
-e32a8d88eebda6c163339c70352db9040b1721fb assets/nucleartrashcan/lang/en_us.json
+c5ba40619090733994c0adb10d38e2c57f6d001f assets/nucleartrashcan/lang/en_us.json
 66e180049b112643fb01e56c44161950a69b0a59 assets/nucleartrashcan/models/item/nuclear_trash_can.json
 effd6d39fb0b5dc632138e89535d2779286e723f assets/nucleartrashcan/models/nuclear_trash_can.json
 4124a62e91f86eefcd9117627fd73382f6dac2ac data/minecraft/tags/blocks/mineable/pickaxe.json

@@ -1,0 +1,21 @@
+{
+  "block.nucleartrashcan.item_trash_can": "Lixeira de Itens",
+  "block.nucleartrashcan.nuclear_trash_can": "Lixeira de Líquidos",
+  "block.nucleartrashcan.energy_trash_can": "Lixeira de Energia",
+  "block.nucleartrashcan.ultimate_trash_can": "Lixeira Final",
+  "nucleartrashcan.gui.item_trash_can.title": "Lixeira de Itens",
+  "nucleartrashcan.gui.item_trash_can.filter": "Filto",
+  "nucleartrashcan.gui.nuclear_trash_can.title": "Lixeira de Líquidos",
+  "nucleartrashcan.gui.nuclear_trash_can.filter": "Lixeira de Líquidos",
+  "nucleartrashcan.gui.energy_trash_can.title": "Lixeira de Energia",
+  "nucleartrashcan.gui.energy_trash_can.limit": "Limite de Transferência",
+  "nucleartrashcan.gui.energy_trash_can.check.on": "Limitado",
+  "nucleartrashcan.gui.energy_trash_can.check.off": "Ilimitado",
+  "nucleartrashcan.gui.energy_trash_can.value": "Máximo $number$ FE/t",
+  "nucleartrashcan.gui.ultimate_trash_can.title": "Lixeira Final",
+  "nucleartrashcan.gui.ultimate_trash_can.item_filter": "Filtro de Itens",
+  "nucleartrashcan.gui.ultimate_trash_can.nuclear_filter": "Filtro de Líquidos",
+  "nucleartrashcan.gui.ultimate_trash_can.energy_limit": "Limite de Transferência de Energia",
+  "nucleartrashcan.gui.whitelist.on": "Lista Branca",
+  "nucleartrashcan.gui.whitelist.off": "Lista Negra"
+}

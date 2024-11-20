@@ -1,0 +1,49 @@
+{
+  "parent": "minecraft:recipes/root",
+  "display": {
+    "icon": {
+      "item": "nucleartrashcan:nuclear_trash_can"
+    },
+    "title": {
+      "translate": "nucleartrashcan.advancement.recipes/misc/nuclear_trash_can.title"
+    },
+    "description": {
+      "translate": "nucleartrashcan.advancement.recipes/misc/nuclear_trash_can.description"
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "nucleartrashcan:nuclear_trash_can"
+      }
+    },
+    "recipe_condition": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:bucket"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "recipe_condition"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "nucleartrashcan:nuclear_trash_can"
+    ]
+  }
+}

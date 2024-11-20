@@ -59,3 +59,10 @@ description='''${mod_description}'''
     versionRange="${config_library_dependency}"
     ordering="NONE"
     side="BOTH"
+
+[[dependencies.${mod_id}]]
+modId="mekanism"
+mandatory=true
+versionRange="[10.4.9,11.0.0)"
+ordering="NONE"
+side="BOTH"

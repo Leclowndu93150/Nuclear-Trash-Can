@@ -1,0 +1,6 @@
+{
+  "parent": "nucleartrashcan:trash_can",
+  "textures": {
+    "all": "nucleartrashcan:trash_can_nuclear"
+  }
+}

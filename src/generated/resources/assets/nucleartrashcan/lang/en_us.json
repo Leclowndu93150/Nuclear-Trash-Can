@@ -1,0 +1,12 @@
+{
+  "nucleartrashcan.block.nuclear_trash_can": "Nuclear Trash Can",
+  "nucleartrashcan.nuclear_trash_can.info": "Can void nuclear waste and gasses, also contains a filter for up to 9 fluids",
+  "nucleartrashcan.advancement.trash_can.title": "Don't forget to recycle",
+  "nucleartrashcan.advancement.trash_can.description": "Craft a trash can",
+  "nucleartrashcan.gui.nuclear_trash_can.title": "Nuclear Trash Can",
+  "nucleartrashcan.gui.nuclear_trash_can.filter": "Filter",
+  "nucleartrashcan.gui.whitelist.on": "Whitelist",
+  "nucleartrashcan.gui.whitelist.off": "Blacklist",
+  "nucleartrashcan.gui.arrow.left": "Decrease energy limit",
+  "nucleartrashcan.gui.arrow.right": "Increase energy limit"
+}
