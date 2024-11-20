@@ -8,13 +8,13 @@ import net.minecraft.core.BlockPos;
 /**
  * Created 7/8/2020 by SuperMartijn642
  */
-public class PacketToggleLiquidWhitelist extends BlockEntityBasePacket<TrashCanBlockEntity> {
+public class PacketToggleNuclearWhitelist extends BlockEntityBasePacket<TrashCanBlockEntity> {
 
-    public PacketToggleLiquidWhitelist(BlockPos pos){
+    public PacketToggleNuclearWhitelist(BlockPos pos){
         super(pos);
     }
 
-    public PacketToggleLiquidWhitelist(){
+    public PacketToggleNuclearWhitelist(){
     }
 
     @Override

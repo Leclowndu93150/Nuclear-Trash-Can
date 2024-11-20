@@ -23,7 +23,7 @@ logoFile="${mod_id}.png" #optional
 # A text field displayed in the mod UI
 #credits="" #optional
 # A text field displayed in the mod UI
-authors="SuperMartijn642" #optional
+authors="SuperMartijn642, Leclowndu93150" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description='''${mod_description}'''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.

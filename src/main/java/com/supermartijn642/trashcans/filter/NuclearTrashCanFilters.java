@@ -9,7 +9,7 @@ import java.util.Map;
 /**
  * Created 12/19/2020 by SuperMartijn642
  */
-public class LiquidTrashCanFilters {
+public class NuclearTrashCanFilters {
 
     private static final Map<String,IFilterManager> managers = new HashMap<>();
 

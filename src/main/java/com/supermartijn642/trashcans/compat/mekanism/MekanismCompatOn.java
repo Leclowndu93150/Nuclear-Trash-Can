@@ -2,7 +2,7 @@ package com.supermartijn642.trashcans.compat.mekanism;
 
 import com.supermartijn642.trashcans.TrashCansConfig;
 import com.supermartijn642.trashcans.filter.ItemFilter;
-import com.supermartijn642.trashcans.filter.LiquidTrashCanFilters;
+import com.supermartijn642.trashcans.filter.NuclearTrashCanFilters;
 import mekanism.api.Action;
 import mekanism.api.chemical.gas.GasStack;
 import mekanism.api.chemical.gas.IGasHandler;
@@ -21,7 +21,7 @@ import java.util.function.Supplier;
 public class MekanismCompatOn extends MekanismCompatOff {
 
     public MekanismCompatOn(){
-        LiquidTrashCanFilters.register(new GasFilterManager(), "gas");
+        NuclearTrashCanFilters.register(new GasFilterManager(), "gas");
     }
 
     @Override

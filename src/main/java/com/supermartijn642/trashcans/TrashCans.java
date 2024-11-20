@@ -12,7 +12,7 @@ import com.supermartijn642.core.registry.RegistrationHandler;
 import com.supermartijn642.core.registry.RegistryEntryAcceptor;
 import com.supermartijn642.trashcans.compat.Compatibility;
 import com.supermartijn642.trashcans.filter.FluidFilterManager;
-import com.supermartijn642.trashcans.filter.LiquidTrashCanFilters;
+import com.supermartijn642.trashcans.filter.NuclearTrashCanFilters;
 import com.supermartijn642.trashcans.generators.*;
 import com.supermartijn642.trashcans.packet.*;
 import com.supermartijn642.trashcans.screen.*;
@@ -41,8 +41,8 @@ public class TrashCans {
     public TrashCans(){
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::init);
 
-        CHANNEL.registerMessage(PacketToggleLiquidWhitelist.class, PacketToggleLiquidWhitelist::new, true);
-        CHANNEL.registerMessage(PacketChangeLiquidFilter.class, PacketChangeLiquidFilter::new, true);
+        CHANNEL.registerMessage(PacketToggleNuclearWhitelist.class, PacketToggleNuclearWhitelist::new, true);
+        CHANNEL.registerMessage(PacketChangeNuclearFilter.class, PacketChangeNuclearFilter::new, true);
 
         TrashCansConfig.init();
 
@@ -52,17 +52,17 @@ public class TrashCans {
     }
 
     public void init(FMLCommonSetupEvent e){
-        LiquidTrashCanFilters.register(new FluidFilterManager(), "fluid");
+        NuclearTrashCanFilters.register(new FluidFilterManager(), "fluid");
         Compatibility.init();
     }
 
     private static void register(){
         RegistrationHandler handler = RegistrationHandler.get("trashcans");
 
-        handler.registerBlock("nuclear_trash_can", () -> new TrashCanBlock(() -> nuclear_trash_can_tile, LiquidTrashCanContainer::new));
+        handler.registerBlock("nuclear_trash_can", () -> new TrashCanBlock(() -> nuclear_trash_can_tile, NuclearTrashCanContainer::new));
         handler.registerBlockEntityType("nuclear_trash_can_tile", () -> BaseBlockEntityType.create((pos, state) -> new TrashCanBlockEntity(nuclear_trash_can_tile, pos, state, false, true, false), nuclear_trash_can));
         handler.registerItem("nuclear_trash_can", () -> new BaseBlockItem(nuclear_trash_can, ItemProperties.create().group(CreativeItemGroup.getFunctionalBlocks())));
-        handler.registerMenuType("nuclear_trash_can_container", BaseContainerType.create((container, buffer) -> buffer.writeBlockPos(container.getBlockEntityPos()), (player, buffer) -> new LiquidTrashCanContainer(player, buffer.readBlockPos())));
+        handler.registerMenuType("nuclear_trash_can_container", BaseContainerType.create((container, buffer) -> buffer.writeBlockPos(container.getBlockEntityPos()), (player, buffer) -> new NuclearTrashCanContainer(player, buffer.readBlockPos())));
 
     }
 

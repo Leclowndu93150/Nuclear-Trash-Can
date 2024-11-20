@@ -4,9 +4,9 @@ import com.supermartijn642.trashcans.TrashCanBlockEntity;
 import com.supermartijn642.trashcans.TrashCans;
 import com.supermartijn642.trashcans.compat.Compatibility;
 import com.supermartijn642.trashcans.filter.ItemFilter;
-import com.supermartijn642.trashcans.filter.LiquidTrashCanFilters;
+import com.supermartijn642.trashcans.filter.NuclearTrashCanFilters;
 import com.supermartijn642.trashcans.packet.PacketChangeItemFilter;
-import com.supermartijn642.trashcans.packet.PacketChangeLiquidFilter;
+import com.supermartijn642.trashcans.packet.PacketChangeNuclearFilter;
 import com.supermartijn642.trashcans.screen.*;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.forge.ForgeTypes;
@@ -30,7 +30,7 @@ public class GhostIngredientHandler implements IGhostIngredientHandler<TrashCanW
 
         // Get the slots for the item and fluid filters
         List<Slot> itemFilterSlots = new ArrayList<>(), fluidFilterSlots = new ArrayList<>();
-        if(widget instanceof LiquidTrashCanScreen){
+        if(widget instanceof NuclearTrashCanScreen){
             for(int slot = 1; slot <= 9; slot++)
                 fluidFilterSlots.add(container.getSlot(slot));
         }
@@ -66,7 +66,7 @@ public class GhostIngredientHandler implements IGhostIngredientHandler<TrashCanW
         else if(Compatibility.MEKANISM.isGasStack(ingredient.getIngredient()))
             ingredientStack = Compatibility.MEKANISM.getChemicalTankForGasStack(ingredient.getIngredient());
 
-        ItemFilter filter = LiquidTrashCanFilters.createFilter(ingredientStack);
+        ItemFilter filter = NuclearTrashCanFilters.createFilter(ingredientStack);
         if(filter != null){
             // Add a target for each fluid filter slot
             for(int i = 0; i < fluidFilterSlots.size(); i++){
@@ -79,7 +79,7 @@ public class GhostIngredientHandler implements IGhostIngredientHandler<TrashCanW
                     TrashCanBlockEntity entity = container.getBlockEntity();
                     if(entity != null){
                         entity.nuclearFilter.set(index, filter);
-                        TrashCans.CHANNEL.sendToServer(new PacketChangeLiquidFilter(container.getBlockEntityPos(), index, filter));
+                        TrashCans.CHANNEL.sendToServer(new PacketChangeNuclearFilter(container.getBlockEntityPos(), index, filter));
                     }
                 });
                 targets.add(target);

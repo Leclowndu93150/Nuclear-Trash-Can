@@ -4,35 +4,35 @@ import com.supermartijn642.core.network.BlockEntityBasePacket;
 import com.supermartijn642.core.network.PacketContext;
 import com.supermartijn642.trashcans.TrashCanBlockEntity;
 import com.supermartijn642.trashcans.filter.ItemFilter;
-import com.supermartijn642.trashcans.filter.LiquidTrashCanFilters;
+import com.supermartijn642.trashcans.filter.NuclearTrashCanFilters;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
 
-public class PacketChangeLiquidFilter extends BlockEntityBasePacket<TrashCanBlockEntity> {
+public class PacketChangeNuclearFilter extends BlockEntityBasePacket<TrashCanBlockEntity> {
     private int filterSlot;
     private ItemFilter filter;
 
-    public PacketChangeLiquidFilter(BlockPos pos, int filterSlot, ItemFilter filter){
+    public PacketChangeNuclearFilter(BlockPos pos, int filterSlot, ItemFilter filter){
         super(pos);
         this.filterSlot = filterSlot;
         this.filter = filter;
     }
 
-    public PacketChangeLiquidFilter(){
+    public PacketChangeNuclearFilter(){
     }
 
     @Override
     public void write(FriendlyByteBuf buffer){
         super.write(buffer);
         buffer.writeInt(this.filterSlot);
-        buffer.writeNbt(LiquidTrashCanFilters.write(this.filter));
+        buffer.writeNbt(NuclearTrashCanFilters.write(this.filter));
     }
 
     @Override
     public void read(FriendlyByteBuf buffer){
         super.read(buffer);
         this.filterSlot = buffer.readInt();
-        this.filter = LiquidTrashCanFilters.read(buffer.readNbt());
+        this.filter = NuclearTrashCanFilters.read(buffer.readNbt());
     }
 
     @Override

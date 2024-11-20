@@ -4,7 +4,7 @@ import com.supermartijn642.core.block.BaseBlockEntity;
 import com.supermartijn642.core.block.TickableBlockEntity;
 import com.supermartijn642.trashcans.compat.Compatibility;
 import com.supermartijn642.trashcans.filter.ItemFilter;
-import com.supermartijn642.trashcans.filter.LiquidTrashCanFilters;
+import com.supermartijn642.trashcans.filter.NuclearTrashCanFilters;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -351,7 +351,7 @@ public class TrashCanBlockEntity extends BaseBlockEntity implements TickableBloc
         if(this.nuclears){
             for(int i = 0; i < this.nuclearFilter.size(); i++)
                 if(this.nuclearFilter.get(i) != null)
-                    tag.put("nuclearFilter" + i, LiquidTrashCanFilters.write(this.nuclearFilter.get(i)));
+                    tag.put("nuclearFilter" + i, NuclearTrashCanFilters.write(this.nuclearFilter.get(i)));
             tag.putBoolean("nuclearFilterWhitelist", this.nuclearFilterWhitelist);
             if(!this.nuclearItem.isEmpty())
                 tag.put("nuclearItem", this.nuclearItem.save(new CompoundTag()));
@@ -363,7 +363,7 @@ public class TrashCanBlockEntity extends BaseBlockEntity implements TickableBloc
     protected void readData(CompoundTag tag){
         if(this.nuclears){
             for(int i = 0; i < this.nuclearFilter.size(); i++)
-                this.nuclearFilter.set(i, tag.contains("nuclearFilter" + i) ? LiquidTrashCanFilters.read(tag.getCompound("nuclearFilter" + i)) : null);
+                this.nuclearFilter.set(i, tag.contains("nuclearFilter" + i) ? NuclearTrashCanFilters.read(tag.getCompound("nuclearFilter" + i)) : null);
             this.nuclearFilterWhitelist = tag.contains("nuclearFilterWhitelist") && tag.getBoolean("nuclearFilterWhitelist");
             this.nuclearItem = tag.contains("nuclearItem") ? ItemStack.of(tag.getCompound("nuclearItem")) : ItemStack.EMPTY;
         }

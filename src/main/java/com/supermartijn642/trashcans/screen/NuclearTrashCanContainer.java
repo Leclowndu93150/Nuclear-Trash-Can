@@ -3,7 +3,7 @@ package com.supermartijn642.trashcans.screen;
 import com.supermartijn642.trashcans.TrashCanBlockEntity;
 import com.supermartijn642.trashcans.TrashCans;
 import com.supermartijn642.trashcans.filter.ItemFilter;
-import com.supermartijn642.trashcans.filter.LiquidTrashCanFilters;
+import com.supermartijn642.trashcans.filter.NuclearTrashCanFilters;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.ClickType;
@@ -17,9 +17,9 @@ import javax.annotation.Nonnull;
 /**
  * Created 7/11/2020 by SuperMartijn642
  */
-public class LiquidTrashCanContainer extends TrashCanContainer {
+public class NuclearTrashCanContainer extends TrashCanContainer {
 
-    public LiquidTrashCanContainer(Player player, BlockPos pos){
+    public NuclearTrashCanContainer(Player player, BlockPos pos){
         super(TrashCans.nuclear_trash_can_container, player, pos, 202, 180);
     }
 
@@ -45,7 +45,7 @@ public class LiquidTrashCanContainer extends TrashCanContainer {
             if(this.getCarried().isEmpty())
                 this.object.nuclearFilter.set(slotId - 1, null);
             else{
-                ItemFilter filter = LiquidTrashCanFilters.createFilter(this.getCarried());
+                ItemFilter filter = NuclearTrashCanFilters.createFilter(this.getCarried());
                 if(filter != null)
                     this.object.nuclearFilter.set(slotId - 1, filter);
             }
@@ -67,7 +67,7 @@ public class LiquidTrashCanContainer extends TrashCanContainer {
             if(this.getCarried().isEmpty())
                 this.object.nuclearFilter.set(index - 1, null);
             else{
-                ItemFilter filter = LiquidTrashCanFilters.createFilter(this.getCarried());
+                ItemFilter filter = NuclearTrashCanFilters.createFilter(this.getCarried());
                 if(filter != null)
                     this.object.nuclearFilter.set(index - 1, filter);
             }
@@ -85,7 +85,7 @@ public class LiquidTrashCanContainer extends TrashCanContainer {
             @Nonnull
             @Override
             public ItemStack getStackInSlot(int slot){
-                TrashCanBlockEntity entity = LiquidTrashCanContainer.this.object;
+                TrashCanBlockEntity entity = NuclearTrashCanContainer.this.object;
                 return entity == null || entity.nuclearFilter.get(slot) == null ? ItemStack.EMPTY : entity.nuclearFilter.get(slot).getRepresentingItem();
             }
         };
