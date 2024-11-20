@@ -39,8 +39,8 @@ dependencies {
     // Config library
     implementation fg.deobf("curse.maven:supermartijn642s-config-lib-438332:${config_library_file}")
 
-    // Mekanism
-    compileOnly fg.deobf("curse.maven:mekanism-268560:${mekanism_file}")
+    implementation fg.deobf("curse.maven:mekanism-268560:5662583")
+    //compileOnly fg.deobf("curse.maven:mekanism-268560:${mekanism_file}")
     // Just Enough Items
     compileOnly fg.deobf("curse.maven:jei-238222:${just_enough_items_file}")
 }

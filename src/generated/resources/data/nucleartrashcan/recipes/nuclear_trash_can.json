@@ -13,7 +13,7 @@
       "tag": "forge:cobblestone"
     },
     "C": {
-      "item": "minecraft:bucket"
+      "item": "mekanism:yellow_cake_uranium"
     }
   },
   "result": {

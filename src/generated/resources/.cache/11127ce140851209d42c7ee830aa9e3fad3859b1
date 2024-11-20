@@ -1,11 +1,11 @@
-// 1.20.1	2024-11-21T00:09:31.7198611	Core Lib Generators
+// 1.20.1	2024-11-21T00:19:03.9115514	Core Lib Generators
 b2febda997e32a4294a4146e775e4a60ddebf1af assets/minecraft/atlases/blocks.json
 713777ce2721ce5447483c036ecc254b2bf55a07 assets/nucleartrashcan/blockstates/nuclear_trash_can.json
 c5ba40619090733994c0adb10d38e2c57f6d001f assets/nucleartrashcan/lang/en_us.json
 66e180049b112643fb01e56c44161950a69b0a59 assets/nucleartrashcan/models/item/nuclear_trash_can.json
 effd6d39fb0b5dc632138e89535d2779286e723f assets/nucleartrashcan/models/nuclear_trash_can.json
 4124a62e91f86eefcd9117627fd73382f6dac2ac data/minecraft/tags/blocks/mineable/pickaxe.json
-10dc88c96a6b3d1adaeebc78946cbe4f0d8e76bf data/nucleartrashcan/advancements/recipes/misc/nuclear_trash_can.json
+45647b0427f8c24b442fae32fa8d49f8ced506a8 data/nucleartrashcan/advancements/recipes/misc/nuclear_trash_can.json
 815e18d50b9a18ad23f819293a1b862a669e4ebf data/nucleartrashcan/advancements/trash_can.json
 2aa11edeb3f56b6d424119bbaaa176eb7d8805af data/nucleartrashcan/loot_tables/blocks/nuclear_trash_can.json
-891bd8b08351733db4376fe493419de053eb7671 data/nucleartrashcan/recipes/nuclear_trash_can.json
+680e0ba149beab2442604f3d51d0231c3dade884 data/nucleartrashcan/recipes/nuclear_trash_can.json

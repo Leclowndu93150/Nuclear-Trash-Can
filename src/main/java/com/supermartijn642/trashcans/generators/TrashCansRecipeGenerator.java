@@ -3,6 +3,7 @@ package com.supermartijn642.trashcans.generators;
 import com.supermartijn642.core.generator.RecipeGenerator;
 import com.supermartijn642.core.generator.ResourceCache;
 import com.supermartijn642.trashcans.TrashCans;
+import mekanism.common.registries.MekanismItems;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.common.Tags;
 
@@ -23,7 +24,7 @@ public class TrashCansRecipeGenerator extends RecipeGenerator {
             .pattern("BBB")
             .input('A', Tags.Items.STONE)
             .input('B', Tags.Items.COBBLESTONE)
-            .input('C', Items.BUCKET)
-            .unlockedBy(Items.BUCKET);
+            .input('C', MekanismItems.YELLOW_CAKE_URANIUM)
+            .unlockedBy(MekanismItems.YELLOW_CAKE_URANIUM);
     }
 }
